@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="/TrataErro.jsp"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,22 +9,27 @@
     </head>
     <body>
         <%
-            double tempo, velocidade, distancia, kmLitro, consumo;
-            velocidade = Double.parseDouble(request.getParameter("velocidade"));
-            tempo = Double.parseDouble(request.getParameter("tempo"));
+            double salario, prestacao, porc;
+            String mensagem;
+            salario = Double.parseDouble(request.getParameter("salario"));
+            prestacao = Double.parseDouble(request.getParameter("prestacao"));
             
-            kmLitro = 12;
-            distancia = tempo * velocidade;
-            consumo = distancia / kmLitro;
+            porc = salario * 0.20;
             
+            if (porc > salario) {
+                mensagem = "Empréstimo não pode ser concedido, entre em contato com seu gerente.";
+            }
+            else {
+                mensagem = "Empréstimo pode ser concedido. Valor disponível: " + salario*3;
+            }
         %>
         <div class="container">
             <h1>Atividade 6 Resposta</h1>
-            <h3>Consumo do Veiculo</h3>
+            <h3>Solicitação de Empréstimo</h3>
             <hr>
                 <div class="form-group">
                     <div class="well">
-                        <label>Combustivel Gasto: <%=consumo%> Litros</label>
+                        <label><%=mensagem%></label>
                     <br>
                     </div>
                     <a class="btn btn-success" href="atividade6.jsp">
