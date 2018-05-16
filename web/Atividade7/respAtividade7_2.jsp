@@ -11,18 +11,17 @@
         <%
             double valorHora = Double.parseDouble(request.getParameter("valorHora"));
             double salarioLiquido, total, desconto, inss;
-            String descontoINSS = "0." + request.getParameter("descontoINSS");
+            int descontoINSS = Integer.parseInt(request.getParameter("descontoINSS"));
             int horasTrabalhadas;
-            horasTrabalhadas = Integer.getInteger(request.getParameter("horasTrabalhadas"));
-            inss = Double.parseDouble(descontoINSS);
+            horasTrabalhadas = Integer.parseInt(request.getParameter("horasTrabalhadas"));
             
             total = horasTrabalhadas * valorHora;
-            desconto = total * inss;
+            desconto = (total * descontoINSS) / 100;
             salarioLiquido = total - desconto;
         %>
         <div class="container">
-            <h1>Atividade 6 Resposta</h1>
-            <h3>Tabuada</h3>
+            <h1>Atividade 7 Resposta</h1>
+            <h3>Calculo Salario</h3>
             <hr>
                 <div class="form-group">
                     <div class="well">
@@ -32,7 +31,7 @@
                     
                     <br>
                     </div>
-                    <a class="btn btn-success" href="atividade6.jsp">
+                    <a class="btn btn-success" href="atividade7_2.jsp">
                         Efetuar novo Calculo
                     </a>
                 </div>

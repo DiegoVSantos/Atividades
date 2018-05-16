@@ -18,9 +18,30 @@ sabendo que no posto o álcool é vendido a R$ 2,50 e a gasolina a R$ 3,40.
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Atividade 7</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <div class="container">
+            <h1>Atividade 7</h1>
+            <h3>Posto de Combustivel</h3>
+            <hr>
+            <form method="POST" action="respAtividade7_4.jsp">
+                <div class="form-group">
+                    <label for="combustivel">Combustivel</label>
+                    <select name="combustivel">
+                        <option value="g">Gasolina</option>
+                        <option value="a">Alcool</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="litros">Litros Vendidos:</label>
+                    <input type="text" class="form-control" name="litros">
+                </div>
+                <div class="form-group">
+                    <input class="form-control btn btn-success" type="submit" value="Enviar" />
+            </form>
+        </div>
     </body>
 </html>
